@@ -1,11 +1,10 @@
-// import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router';
 import AppBar from './components/AppBar/AppBar';
 import AppContainer from './components/AppContainer';
 
-import HomeView from './views/HomeView';
+import HomeView from './pages/HomePage';
 
-import MoviesView from './views/MoviesView';
+import MoviesView from './pages/MoviesPage';
 
 const App = () => {
   return (
