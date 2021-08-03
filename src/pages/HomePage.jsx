@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 
+import { Link, useRouteMatch } from 'react-router-dom';
+
 import PageTitle from '../components/PageTitle';
 
 import { fetchTrendingMovies } from '../services/movies-api';
 
-const HomeView = () => {
+const HomePage = () => {
+  const { url } = useRouteMatch();
   const [trendingMovies, setTrendingMovies] = useState([]);
   // const [error, setError] = useState(null);
 
@@ -28,7 +31,9 @@ const HomeView = () => {
       {trendingMovies && (
         <ul>
           {trendingMovies.map(tredingMovie => (
-            <li key={tredingMovie.id}>{tredingMovie.original_title}</li>
+            <li key={tredingMovie.id}>
+              <Link to={`${url}/${tredingMovie.id}`}>{tredingMovie.title}</Link>
+            </li>
           ))}
         </ul>
       )}
@@ -36,4 +41,4 @@ const HomeView = () => {
   );
 };
 
-export default HomeView;
+export default HomePage;

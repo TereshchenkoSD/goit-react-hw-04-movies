@@ -2,9 +2,11 @@ import { Route, Switch } from 'react-router';
 import AppBar from './components/AppBar/AppBar';
 import AppContainer from './components/AppContainer';
 
-import HomeView from './pages/HomePage';
+import HomePage from './pages/HomePage';
 
-import MoviesView from './pages/MoviesPage';
+import MoviesPage from './pages/MoviesPage';
+
+import MovieDetailsPage from './pages/MovieDetailsPage';
 
 const App = () => {
   return (
@@ -12,10 +14,13 @@ const App = () => {
       <AppBar />
       <Switch>
         <Route exact path="/">
-          <HomeView />
+          <HomePage />
         </Route>
-        <Route path="/movies">
-          <MoviesView />
+        <Route exact path="/movies">
+          <MoviesPage />
+        </Route>
+        <Route path="/movies/:movieId">
+          <MovieDetailsPage />
         </Route>
       </Switch>
     </AppContainer>
