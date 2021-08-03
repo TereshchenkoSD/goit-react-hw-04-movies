@@ -11,18 +11,19 @@ export async function fetchTrendingMovies() {
   return response.data.results;
 }
 
-export function fetchMovies(page) {
+export async function fetchMovies(page) {
   const url = `/search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false`;
-  const response = axios.get(url);
+  const response = await axios.get(url);
 
   return response.data;
 }
 
-export function fetchMovieDetails(movieId) {
+export async function fetchMovieDetails(movieId) {
   const url = `/movie/${movieId}?api_key=${API_KEY}&language=en-US`;
 
-  const response = axios.get(url);
-  return response.data;
+  const response = await axios.get(url);
+  const movieData = await response.data;
+  return movieData;
 }
 
 export function fetchMovieCredits(movieId) {
