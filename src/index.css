@@ -12,6 +12,26 @@ html {
   box-sizing: inherit;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -41,3 +61,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+.navLink {
+  text-decoration: none;
+  color: rgb(68, 46, 46);
+  font-weight: 500;
+}
+
+.activeNavLink {
+  color: #000;
+  text-decoration: underline;
+}

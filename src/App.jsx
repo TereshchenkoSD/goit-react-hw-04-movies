@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router';
-import AppBar from './components/AppBar/AppBar';
+import AppBar from './components/AppBar';
 import AppContainer from './components/AppContainer';
 
 import HomePage from './pages/HomePage';

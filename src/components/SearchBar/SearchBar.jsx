@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 import {
-  Header,
+  FormContainer,
   Form,
   FormBtn,
   FormBtnLabel,
@@ -15,7 +15,7 @@ const Searchbar = ({ onSearch }) => {
   };
 
   return (
-    <Header>
+    <FormContainer>
       <Form onSubmit={handleSearch}>
         <FormBtn type="submit">
           <FormBtnLabel>Search</FormBtnLabel>
@@ -29,7 +29,7 @@ const Searchbar = ({ onSearch }) => {
           name="movieName"
         />
       </Form>
-    </Header>
+    </FormContainer>
   );
 };
 

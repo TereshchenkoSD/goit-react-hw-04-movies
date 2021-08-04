@@ -6,6 +6,7 @@ import { fetchMovieDetails } from '../services/movies-api';
 const MoviesDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const moviePoster = 'https://image.tmdb.org/t/p/w500';
 
   useEffect(() => {
     async function onFetchMovieDetails() {
@@ -23,17 +24,35 @@ const MoviesDetailsPage = () => {
   return (
     <>
       <h1>Это страница с информацией по одному фильму</h1>
-
-      {movie && (
-        <>
-          <img src={movie.backdrop_path} alt={movie.title} />
-
-          <h3>{movie.title}</h3>
-          <p>Popularity</p>
-          <p>{movie.popularity}</p>
-          <p>Overview</p>
-          <p>{movie.overview}</p>
-        </>
+      <btn type="button">Go back</btn>
+      {movie !== null && (
+        <div>
+          <img src={`${moviePoster}${movie.poster_path}`} alt={movie.title} />
+          <div>
+            <ul>
+              <li>
+                <b>Title:</b>
+                <span>{movie.title}</span>
+              </li>
+              <li>
+                <b>Popularity:</b>
+                <span>{movie.popularity}</span>
+              </li>
+              <li>
+                <b>Overview:</b>
+                <span>{movie.overview}</span>
+              </li>
+              <li>
+                <b>Genres:</b>
+                <span>
+                  {movie.genres.map(genre => {
+                    return <span key={genre.id}>{genre.name} </span>;
+                  })}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
       )}
     </>
   );
