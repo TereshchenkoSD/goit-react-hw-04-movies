@@ -11,11 +11,11 @@ export async function fetchTrendingMovies() {
   return response.data.results;
 }
 
-export async function fetchMovies(page) {
-  const url = `/search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false`;
+export async function fetchMovies(page, query) {
+  const url = `/search/movie?api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false&query=${query}`;
   const response = await axios.get(url);
 
-  return response.data;
+  return response.data.results;
 }
 
 export async function fetchMovieDetails(movieId) {
