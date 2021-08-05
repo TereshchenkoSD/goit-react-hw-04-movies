@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Nav, NavList, NavListItem } from './Navigation.styled';
+import { Nav, NavList, NavListItem } from './Navigation.styles';
 
 const Navigation = () => {
   return (

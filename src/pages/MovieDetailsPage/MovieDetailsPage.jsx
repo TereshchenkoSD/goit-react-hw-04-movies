@@ -1,7 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { fetchMovieDetails } from '../services/movies-api';
+import { fetchMovieDetails } from '../../services/movies-api';
+
+import {
+  MovieTextBlock,
+  MovieDataBlock,
+  MovieTextBlockItem,
+  MovieImg,
+  MovieTextTitle,
+} from './MovieDetailsPage.styles';
 
 const MoviesDetailsPage = () => {
   const { movieId } = useParams();
@@ -26,33 +34,36 @@ const MoviesDetailsPage = () => {
       <h1>Это страница с информацией по одному фильму</h1>
       <btn type="button">Go back</btn>
       {movie !== null && (
-        <div>
-          <img src={`${moviePoster}${movie.poster_path}`} alt={movie.title} />
-          <div>
+        <MovieDataBlock>
+          <MovieImg
+            src={`${moviePoster}${movie.poster_path}`}
+            alt={movie.title}
+          />
+          <MovieTextBlock>
             <ul>
-              <li>
-                <b>Title:</b>
+              <MovieTextBlockItem>
+                <MovieTextTitle>Title:</MovieTextTitle>
                 <span>{movie.title}</span>
-              </li>
-              <li>
-                <b>Popularity:</b>
+              </MovieTextBlockItem>
+              <MovieTextBlockItem>
+                <MovieTextTitle>Popularity:</MovieTextTitle>
                 <span>{movie.popularity}</span>
-              </li>
-              <li>
-                <b>Overview:</b>
+              </MovieTextBlockItem>
+              <MovieTextBlockItem>
+                <MovieTextTitle>Overview:</MovieTextTitle>
                 <span>{movie.overview}</span>
-              </li>
-              <li>
-                <b>Genres:</b>
+              </MovieTextBlockItem>
+              <MovieTextBlockItem>
+                <MovieTextTitle>Genres:</MovieTextTitle>
                 <span>
                   {movie.genres.map(genre => {
                     return <span key={genre.id}>{genre.name} </span>;
                   })}
                 </span>
-              </li>
+              </MovieTextBlockItem>
             </ul>
-          </div>
-        </div>
+          </MovieTextBlock>
+        </MovieDataBlock>
       )}
     </>
   );
