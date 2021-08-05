@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-import PageTitle from '../components/PageTitle';
+import PageTitle from '../../components/PageTitle';
 
-import { fetchTrendingMovies } from '../services/movies-api';
+import { fetchTrendingMovies } from '../../services/movies-api';
 
-import MoviesList from '../components/MovieList';
+import MoviesList from '../../components/MovieList';
 
 const HomePage = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);

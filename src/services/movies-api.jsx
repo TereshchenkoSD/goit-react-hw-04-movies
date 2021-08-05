@@ -30,12 +30,12 @@ export function fetchMovieCredits(movieId) {
   const url = `/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`;
 
   const response = axios.get(url);
-  return response.data;
+  return response.data.cast;
 }
 
 export function fetchMovieReviews(movieId, page) {
   const url = `/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=${page}`;
 
   const response = axios.get(url);
-  return response.data;
+  return response.data.results;
 }

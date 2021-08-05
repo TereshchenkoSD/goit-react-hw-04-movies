@@ -1,8 +1,8 @@
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 import AppBar from './components/AppBar';
 import AppContainer from './components/AppContainer';
 
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 
 import MoviesPage from './pages/MoviesPage';
 

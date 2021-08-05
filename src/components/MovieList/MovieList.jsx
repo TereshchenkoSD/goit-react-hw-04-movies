@@ -7,6 +7,7 @@ import {
   MovieGalleryItem,
   MoviePosterWrapper,
   MovieTitle,
+  MoviePoster,
 } from './MovieList.styles';
 
 import noPosterImage from '../../images/no-poster.png';
@@ -21,9 +22,9 @@ const MovieList = ({ movies }) => {
           <Link to={`movies/${id}`}>
             <MoviePosterWrapper>
               {poster_path ? (
-                <img src={`${moviePoster}${poster_path}`} alt={title} />
+                <MoviePoster src={`${moviePoster}${poster_path}`} alt={title} />
               ) : (
-                <img src={noPosterImage} alt={title} />
+                <MoviePoster src={noPosterImage} alt={title} />
               )}
             </MoviePosterWrapper>
             <MovieTitle>{title}</MovieTitle>

@@ -1,5 +1,7 @@
+import { Container } from './AppContainer.styles';
+
 const AppContainer = ({ children }) => {
-  return <div>{children}</div>;
+  return <Container>{children}</Container>;
 };
 
 export default AppContainer;
