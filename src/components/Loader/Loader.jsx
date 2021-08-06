@@ -6,11 +6,11 @@ const Loader = () => {
   return (
     <LoaderContainer>
       <Spinner
-        type="Rings"
+        type="Bars"
         color="#00BFFF"
         height={100}
         width={100}
-        timeout={7000}
+        timeout={6000}
       />
     </LoaderContainer>
   );

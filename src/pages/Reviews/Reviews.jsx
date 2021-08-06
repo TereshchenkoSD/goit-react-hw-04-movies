@@ -11,6 +11,7 @@ export default function Reviews({ movieId }) {
     async function onFetchMovieReviews() {
       try {
         const reviewsList = await fetchMovieReviews(movieId);
+        console.log(reviewsList);
         setReviews(reviewsList);
       } catch (error) {
         <p>no cast</p>;

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { useHistory, useLocation } from 'react-router-dom';
+
 import toast, { Toaster } from 'react-hot-toast';
 
 import SearchBar from '../components/SearchBar';
@@ -18,8 +20,17 @@ const MoviesPage = () => {
   const [reqStatus, setReqStatus] = useState('idle');
   const [page, setPage] = useState(1);
   const [error, setError] = useState(null);
+  const location = useLocation();
+  const history = useHistory();
 
   const showMovieList = movies.length > 19;
+
+  useEffect(() => {
+    if (location.search === '') return;
+
+    const newQuery = new URLSearchParams(location.search).get('query');
+    setQuery(newQuery);
+  }, [location.search]);
 
   useEffect(() => {
     if (!query) {
@@ -53,6 +64,7 @@ const MoviesPage = () => {
     }
     resetState();
     setQuery(query);
+    history.push({ ...location, search: `query=${query}` });
   };
 
   const scrollPageToEnd = () => {

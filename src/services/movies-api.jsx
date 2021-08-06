@@ -33,8 +33,8 @@ export function fetchMovieCredits(movieId) {
   return response.data.cast;
 }
 
-export function fetchMovieReviews(movieId, page) {
-  const url = `/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=${page}`;
+export function fetchMovieReviews(movieId) {
+  const url = `/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`;
 
   const response = axios.get(url);
   return response.data.results;
