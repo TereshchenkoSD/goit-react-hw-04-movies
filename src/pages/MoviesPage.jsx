@@ -57,14 +57,14 @@ const MoviesPage = () => {
     }
   }, [page, query]);
 
-  const handleFormSubmit = query => {
-    if (query.trim() === '') {
+  const handleFormSubmit = newSearch => {
+    if (newSearch.trim() === '') {
       toast.error('Invalid search query');
       return;
     }
     resetState();
-    setQuery(query);
-    history.push({ ...location, search: `query=${query}` });
+    setQuery(newSearch);
+    history.push({ ...location, search: `query=${newSearch}` });
   };
 
   const scrollPageToEnd = () => {

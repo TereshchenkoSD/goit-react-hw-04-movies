@@ -26,16 +26,16 @@ export async function fetchMovieDetails(movieId) {
   return movieData;
 }
 
-export function fetchMovieCredits(movieId) {
+export async function fetchMovieCredits(movieId) {
   const url = `/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`;
 
-  const response = axios.get(url);
+  const response = await axios.get(url);
   return response.data.cast;
 }
 
-export function fetchMovieReviews(movieId) {
+export async function fetchMovieReviews(movieId) {
   const url = `/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`;
 
-  const response = axios.get(url);
+  const response = await axios.get(url);
   return response.data.results;
 }

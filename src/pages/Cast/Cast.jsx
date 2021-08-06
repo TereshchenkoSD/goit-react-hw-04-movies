@@ -16,6 +16,7 @@ export default function Cast({ movieId }) {
         if (cast.length === 0) {
           <p>no cast</p>;
         }
+        console.log(cast);
         setCast(cast);
       } catch (error) {
         <p>no cast</p>;

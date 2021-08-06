@@ -51,7 +51,7 @@ const MoviesDetailsPage = () => {
     history.push(location?.state?.from ?? '/');
   };
 
-  console.log(movieId);
+  console.log(path);
   return (
     <>
       <BtnGoBack type="button" onClick={onGoBack}>

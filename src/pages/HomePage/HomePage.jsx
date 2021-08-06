@@ -13,7 +13,6 @@ const HomePage = () => {
     async function onFetchTrendingMovies() {
       try {
         const movies = await fetchTrendingMovies();
-        console.log(movies);
         setTrendingMovies(prevState => [...prevState, ...movies]);
       } catch (error) {
         console.log(error);
